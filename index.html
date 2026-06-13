@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Peekaboo Pals</title>
+  <style>
+    :root {
+      --blue:      #1976D2;
+      --blue-light:#E3F2FD;
+      --blue-dark: #1565C0;
+      --green:     #66BB6A;
+      --yellow:    #FFD54F;
+      --text:      #212121;
+      --muted:     #546E7A;
+      --border:    #E0E0E0;
+      --bg:        #F8FAFB;
+      --white:     #FFFFFF;
+      --radius:    12px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    /* ── HEADER ─────────────────────────────────────────────── */
+    header {
+      background: linear-gradient(135deg, #1976D2 0%, #42A5F5 100%);
+      padding: 48px 24px 40px;
+      text-align: center;
+      color: white;
+    }
+
+    .header-icon {
+      font-size: 56px;
+      display: block;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.25));
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-8px); }
+    }
+
+    header h1 {
+      font-size: clamp(24px, 5vw, 36px);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+
+    header .subtitle {
+      font-size: 15px;
+      opacity: 0.88;
+      font-weight: 400;
+    }
+
+    .badge-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    /* ── LAYOUT ─────────────────────────────────────────────── */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* effective date bar */
+    .meta-bar {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 20px;
+      margin: 28px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .meta-bar strong { color: var(--text); }
+
+    /* quick summary cards */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+
+    .summary-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      text-align: center;
+    }
+
+    .summary-card .icon { font-size: 28px; margin-bottom: 8px; display: block; }
+    .summary-card .label { font-size: 13px; font-weight: 600; color: var(--text); }
+    .summary-card .val   { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+    /* sections */
+    .section {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin-bottom: 16px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-num {
+      width: 32px; height: 32px;
+      background: var(--blue-light);
+      color: var(--blue-dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .section h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--blue-dark);
+    }
+
+    .section p { color: var(--muted); margin-bottom: 12px; font-size: 15px; }
+    .section p:last-child { margin-bottom: 0; }
+
+    .section ul {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 12px;
+    }
+
+    .section ul li {
+      padding: 6px 0 6px 24px;
+      position: relative;
+      font-size: 15px;
+      color: var(--muted);
+      border-bottom: 1px solid #F5F5F5;
+    }
+
+    .section ul li:last-child { border-bottom: none; }
+
+    .section ul li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .section ul li.cross::before { content: '✗'; color: #EF5350; }
+
+    /* highlight box */
+    .highlight {
+      background: var(--blue-light);
+      border-left: 4px solid var(--blue);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 16px;
+      margin: 14px 0;
+      font-size: 14px;
+      color: var(--blue-dark);
+    }
+
+    .highlight strong { display: block; margin-bottom: 2px; }
+
+    /* contact card */
+    .contact-card {
+      background: linear-gradient(135deg, var(--blue-light), #E8F5E9);
+      border: 1px solid #BBDEFB;
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      text-align: center;
+      margin-top: 28px;
+    }
+
+    .contact-card h3 { font-size: 18px; color: var(--blue-dark); margin-bottom: 6px; }
+    .contact-card p  { color: var(--muted); font-size: 14px; margin-bottom: 14px; }
+
+    .contact-card a {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      text-decoration: none;
+      padding: 11px 28px;
+      border-radius: 24px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: background 0.15s;
+    }
+
+    .contact-card a:hover { background: var(--blue-dark); }
+
+    /* footer */
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: var(--white);
+    }
+
+    footer .famz { color: var(--blue); font-weight: 600; }
+
+    @media (max-width: 520px) {
+      .section { padding: 20px 16px; }
+      .meta-bar { flex-direction: column; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <span class="header-icon">🐾</span>
+  <h1>Privacy Policy</h1>
+  <p class="subtitle">Peekaboo Pals — Kids Memory Card Game</p>
+  <div class="badge-row">
+    <span class="badge">👶 Kids Safe</span>
+    <span class="badge">🚫 No Data Collected</span>
+    <span class="badge">🔒 COPPA Compliant</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- META BAR -->
+  <div class="meta-bar">
+    <span>📅 <strong>Effective Date:</strong> June 13, 2026</span>
+    <span>🏢 <strong>Developer:</strong> Famz Games</span>
+    <span>📦 <strong>Package:</strong> com.famzgames.peekaboopals</span>
+  </div>
+
+  <!-- QUICK SUMMARY -->
+  <div class="summary-grid">
+    <div class="summary-card">
+      <span class="icon">🙈</span>
+      <div class="label">No Personal Data</div>
+      <div class="val">We don't collect names, emails or accounts</div>
+    </div>
+    <div class="summary-card">
+      <span class="icon">📍</span>
+      <div class="label">No Location</div>
+      <div class="val">We never access your device location</div>
+    </div>
+    <div class="summary-card">
+      <span class="icon">👥</span>
+      <div class="val">No chat, social or external links</div>
+      <div class="label">No Social Features</div>
+    </div>
+    <div class="summary-card">
+      <span class="icon">💰</span>
+      <div class="label">No In-App Purchases</div>
+      <div class="val">Free to play, ad-supported only</div>
+    </div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <h2>Introduction</h2>
+    </div>
+    <p>Welcome to <strong>Peekaboo Pals</strong>, a kids memory card matching game developed by <strong>Famz Games</strong> ("we", "us", or "our"). This Privacy Policy explains how we handle information when you use our mobile application available on Google Play.</p>
+    <p>We are committed to protecting the privacy of all users, especially children. Peekaboo Pals is designed to be a safe, fun experience with no personal data collection.</p>
+    <div class="highlight">
+      <strong>Simple summary:</strong>
+      We do not collect, store, sell or share any personal information from players of Peekaboo Pals.
+    </div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <h2>Information We Do NOT Collect</h2>
+    </div>
+    <p>Peekaboo Pals does not collect any of the following:</p>
+    <ul>
+      <li class="cross">Name, email address, or any account information</li>
+      <li class="cross">Phone number or device contacts</li>
+      <li class="cross">Location or GPS data</li>
+      <li class="cross">Photos, camera, or microphone access</li>
+      <li class="cross">Payment or financial information</li>
+      <li class="cross">Social media profiles or login data</li>
+      <li class="cross">Voice recordings or biometric data</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <h2>Information Collected Automatically</h2>
+    </div>
+    <p>Our app uses <strong>Google AdMob</strong> to display advertisements and <strong>Firebase</strong> (Crashlytics + Analytics) to monitor performance. These third-party services may collect limited, non-personal technical data including:</p>
+    <ul>
+      <li>Device type and operating system version</li>
+      <li>App version and crash reports</li>
+      <li>General usage patterns (e.g. which difficulty level is selected)</li>
+      <li>Advertising ID (used for ad serving only)</li>
+    </ul>
+    <div class="highlight">
+      <strong>Important:</strong>
+      This data is collected by Google's SDKs under their own privacy policies. We do not have direct access to personally identifiable information from these services.
+    </div>
+    <p>You can review Google's privacy practices at: <a href="https://policies.google.com/privacy" style="color:var(--blue)">policies.google.com/privacy</a></p>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <h2>Advertising</h2>
+    </div>
+    <p>Peekaboo Pals is free to play and is supported by ads served through <strong>Google AdMob</strong>. Ads may appear as banner ads at the bottom of the screen and occasional interstitial ads between game sessions.</p>
+    <ul>
+      <li>We use Google AdMob's family policy settings for child-directed treatment</li>
+      <li>Ads shown are appropriate for all ages</li>
+      <li>We do not use personalised advertising targeted at children</li>
+      <li>AdMob may use the Advertising ID on your device to serve relevant ads</li>
+    </ul>
+    <p>You can opt out of personalised ads through your device settings: <strong>Settings → Google → Ads → Opt out of Ads Personalisation</strong>.</p>
+  </div>
+
+  <!-- SECTION 5 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <h2>Children's Privacy (COPPA)</h2>
+    </div>
+    <p>Peekaboo Pals is designed for children and complies with the <strong>Children's Online Privacy Protection Act (COPPA)</strong> and Google Play's Families Policy.</p>
+    <ul>
+      <li>We do not knowingly collect personal information from children under 13</li>
+      <li>No registration or account creation is required</li>
+      <li>No chat, messaging, or social interaction features exist in the app</li>
+      <li>No links to external websites or third-party apps are accessible from within the game</li>
+      <li>All advertising is served in compliance with child-directed content policies</li>
+    </ul>
+    <p>If you believe we have inadvertently collected personal information about a child, please contact us immediately at <a href="mailto:famzgamesstudio@gmail.com" style="color:var(--blue)">famzgamesstudio@gmail.com</a> and we will delete it promptly.</p>
+  </div>
+
+  <!-- SECTION 6 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <h2>Data Storage & Security</h2>
+    </div>
+    <p>Peekaboo Pals stores only your <strong>high score</strong> locally on your device using Android's built-in storage. This data:</p>
+    <ul>
+      <li>Never leaves your device</li>
+      <li>Is not transmitted to our servers</li>
+      <li>Is deleted when you uninstall the app</li>
+      <li>Is not accessible to any third parties</li>
+    </ul>
+    <p>We take the security of our app seriously and regularly review our code to ensure it meets the highest standards of safety for young players.</p>
+  </div>
+
+  <!-- SECTION 7 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">7</div>
+      <h2>Third-Party Services</h2>
+    </div>
+    <p>Our app integrates the following third-party services, each with their own privacy policies:</p>
+    <ul>
+      <li><strong>Google AdMob</strong> — Ad serving: <a href="https://policies.google.com/privacy" style="color:var(--blue)">policies.google.com/privacy</a></li>
+      <li><strong>Firebase Analytics</strong> — App analytics: <a href="https://firebase.google.com/support/privacy" style="color:var(--blue)">firebase.google.com/support/privacy</a></li>
+      <li><strong>Firebase Crashlytics</strong> — Crash reporting: <a href="https://firebase.google.com/support/privacy" style="color:var(--blue)">firebase.google.com/support/privacy</a></li>
+    </ul>
+    <p>We encourage parents and guardians to review these policies to understand how these services operate.</p>
+  </div>
+
+  <!-- SECTION 8 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">8</div>
+      <h2>Your Rights</h2>
+    </div>
+    <p>Depending on your location, you may have the following rights regarding your data:</p>
+    <ul>
+      <li>Right to know what data is collected about you</li>
+      <li>Right to request deletion of your data</li>
+      <li>Right to opt out of data collection for advertising</li>
+      <li>Right to lodge a complaint with your local data protection authority</li>
+    </ul>
+    <p>Since Peekaboo Pals does not collect personal data, most of these rights are already satisfied by default. For any concerns, contact us at <a href="mailto:famzgamesstudio@gmail.com" style="color:var(--blue)">famzgamesstudio@gmail.com</a>.</p>
+  </div>
+
+  <!-- SECTION 9 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">9</div>
+      <h2>Changes to This Policy</h2>
+    </div>
+    <p>We may update this Privacy Policy from time to time as our app evolves or legal requirements change. When we do:</p>
+    <ul>
+      <li>The "Effective Date" at the top will be updated</li>
+      <li>Significant changes will be communicated via app update notes</li>
+      <li>Continued use of the app after changes means you accept the updated policy</li>
+    </ul>
+    <p>We encourage you to review this policy periodically.</p>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact-card">
+    <h3>📬 Questions or Concerns?</h3>
+    <p>If you have any questions about this Privacy Policy or how Peekaboo Pals handles data, we're happy to help. Reach out to us anytime.</p>
+    <a href="mailto:famzgamesstudio@gmail.com">✉️ famzgamesstudio@gmail.com</a>
+    <p style="margin-top:14px;font-size:13px;color:#90A4AE;">
+      Famz Games · Lahore, Punjab, Pakistan<br/>
+      Response time: within 48 hours
+    </p>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <span class="famz">Famz Games</span> · All rights reserved</p>
+  <p style="margin-top:4px">Peekaboo Pals · com.famzgames.peekaboopals · Version 1.0</p>
+</footer>
+
+</body>
+</html>
